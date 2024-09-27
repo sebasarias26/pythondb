@@ -1,7 +1,9 @@
+# El objetivo del DTo es responderle a un cliente con unos datos específicos
+
 from pydantic import BaseModel, Field
 from datetime import date
 
-class UsuarioDTOPetición(BaseModel):
+class UsuarioDTOPeticion(BaseModel): #En petición se piden todos losdatos
     nombre:str 
     edad:int
     telefono:str
@@ -12,7 +14,7 @@ class UsuarioDTOPetición(BaseModel):
     class Config:
         orm_mode=True
 
-class UsuarioDTORespuesta():
+class UsuarioDTORespuesta(): #En respuesta se muestran los necesarios
     id:int
     nombre:str
     telefono:str
@@ -20,7 +22,7 @@ class UsuarioDTORespuesta():
     class Config:
         orm_mode=True
 
-class gastoDTOPetición():
+class GastoDTOPeticion():
     monto:int
     fecha:date
     descripcion:str
@@ -28,14 +30,14 @@ class gastoDTOPetición():
     class Config:
         orm_mode=True
 
-class gastoDTORespuesta():
+class GastoDTORespuesta():
     fecha:date
     descripcion:str
     nombre:str
     class Config:
         orm_mode=True
 
-class CategoriaDTOPetición():
+class CategoriaDTOPeticion():
     nombreCategoria:str
     fotoIcono:str
     class Config:
@@ -47,7 +49,7 @@ class CategoriaDTORespuesta():
     class Config:
         orm_mode=True
 
-class MetodoPagoDTOPetición():
+class MetodoPagoDTOPeticion():
     nombre:str
     valor:int
     descripcion:str
@@ -61,7 +63,7 @@ class MetodoPagoDTORespuesta():
     class Config:
         orm_mode=True
 
-class facturadeoDTOPetición():
+class facturadeoDTOPeticion():
     numeroTransaccion:int
     valor:int
     descripcion:str

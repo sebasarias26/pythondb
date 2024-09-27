@@ -1,3 +1,4 @@
+#Aqui se realizan la creación de las tablas de la base de datos
 from sqlalchemy import Column, Integer, String, Float, Date
 from sqlalchemy.orm import relationship 
 from sqlalchemy.ext.declarative import declarative_base
@@ -22,11 +23,11 @@ class Gasto(Base):
     descripcion=Column(String(250))
     nombre=(String(50))
 
-class Categoría(Base):
+class Categoria(Base):
     __tablename__ = 'categoria'
     id=Column(Integer, primary_key=True, autoincrement=True)
     nombreCategoria=Column(String(50))
-    fotoicono=Column(String(50))
+    fotoIcono=Column(String(50))
 
 class MetodoPago(Base):
     __tablename__ = 'MetodoPago'
